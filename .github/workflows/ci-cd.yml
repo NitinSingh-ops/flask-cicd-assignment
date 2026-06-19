@@ -11,22 +11,20 @@ runs-on: ubuntu-latest
 
 ```
 steps:
-  - uses: actions/checkout@v4
+  - name: Checkout Code
+    uses: actions/checkout@v4
 
   - name: Setup Python
     uses: actions/setup-python@v5
     with:
-      python-version: '3.12'
+      python-version: "3.12"
 
   - name: Install Dependencies
-    run: |
-      pip install -r requirements.txt
+    run: pip install -r requirements.txt
 
   - name: Run Tests
-    run: |
-      python -m pytest -v
+    run: python -m pytest -v
 
   - name: Deploy
-    run: |
-      echo "Application deployed successfully"
+    run: echo "Application deployed successfully"
 ```
